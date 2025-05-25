@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { NavigationButton } from "@/components/NavigationButton"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isHidden, setIsHidden] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +36,7 @@ export default function Navbar() {
         transition: "transform 0.3s ease-in-out",
       }}
     >
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 lg:space-y-0">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 lg:space-y-0 px-4">
         <div className="flex flex-col items-start">
           <div className="flex space-x-4">
             <Image
@@ -57,9 +59,21 @@ export default function Navbar() {
             />
           </div>
         </div>
-
-        <div className="flex items-center">
-          <NavigationButton className="bg-pigment_green hover:bg-pigment_green-600 text-white w-40 h-12 rounded-md" />
+        <div className="flex flex-wrap gap-3">
+          <div className="inline-flex rounded-lg overflow-hidden">
+            <Link
+              href={pathname === "/registration" ? "/" : "/registration"}
+              className="bg-pigment_green text-white px-6 py-3 flex items-center justify-center gap-2 hover:bg-pigment_green/90 transition-colors"
+            >
+              <span className="font-semibold">{pathname === "/registration" ? "Back to Main Page" : "Register"}</span>
+            </Link>
+            <Link
+              href={pathname === "/how-to-pay" ? "/" : "/how-to-pay"}
+              className="bg-chili_red text-white px-6 py-3 flex items-center justify-center gap-2 hover:bg-chili_red/90 transition-colors"
+            >
+              <span className="font-semibold">{pathname === "/how-to-pay" ? "Back to Main Page" : "How to Pay"}</span>
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

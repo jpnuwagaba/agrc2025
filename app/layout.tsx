@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import ScrollToTop from "@/components/ScrollToTop"
 import { validateEnv } from "@/lib/env"
+import FloatingHowToPay from "@/components/FloatingHowToPay"
 
 // Validate environment variables during build/startup
 if (typeof window === "undefined") {
@@ -71,6 +72,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow pt-24 md:pt-32">{children}</main>
         <Footer />
+        <FloatingHowToPay />
         <ScrollToTop />
       </body>
     </html>
