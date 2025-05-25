@@ -265,7 +265,10 @@ export function ProgramSchedule() {
             <Button
               className="bg-pigment_green hover:bg-pigment_green-600 text-white"
               onClick={() => {
-                window.open("/documents/agrc-ealan-2025-program.pdf", "_blank")
+                window.open(
+                  "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/AGRC-EALAN%202025%20PROGRAM-EQMLNgMeNgoDJm9IZJdOz1Fyh2O3to.pdf",
+                  "_blank",
+                )
               }}
             >
               <svg
