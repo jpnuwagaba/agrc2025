@@ -22,19 +22,20 @@ const speakers = [
     topic: "Land Administration and Policy Reforms in Uganda",
   },
   {
-    name: "Prof. Moses Musinguzi",
-    title: "Professor of Geomatics",
-    institution: "Principal, College of Engineering Design Art and Technology",
-    university: "Makerere University",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-oYmsNe8zl2OP9vlZ69xTI7Uoa6EaXk.png",
-    topic: "Geomatics Education and Research in East Africa",
+    name: "Dr. Upendo Chamuriho Matotola",
+    title: "Director of Real Estate",
+    institution: "Ministry of Lands, Housing and Human Settlements Development",
+    university: "Deputy Project Coordinator, World Bank-financed Land Tenure Improvement Project",
+    image: "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/Upendo-uhSmiAahjMftDLCq0Txn1mezJg3xU0.jpeg",
+    topic: "Harnessing innovation to strengthen Land administration in Tanzania",
   },
   {
     name: "Prof. Timothy Dube",
     title: "Director, Institute for Water Studies",
     institution: "Geospatial Science for Water Resources",
     university: "University of the Western Cape",
-    image: "https://res.cloudinary.com/dhshd7umk/image/upload/v1744981397/agrc2025ealan/7TH%20ADVANCES%20CONFERENCE%20PHOTOS/dube_sunync.jpg",
+    image:
+      "https://res.cloudinary.com/dhshd7umk/image/upload/v1744981397/agrc2025ealan/7TH%20ADVANCES%20CONFERENCE%20PHOTOS/dube_sunync.jpg",
     topic: "Earth Observation Applications for Environmental Sustainability",
   },
 ]
