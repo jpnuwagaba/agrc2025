@@ -19,7 +19,7 @@ const speakers = [
     institution: "Global Land Tool Network",
     university: "UN-Habitat",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-eJ3SI00RkhGAYGPW7NRPVMv4nHM0Ph.png",
-    topic: "Land Administration and Policy Reforms in Uganda",
+    topic: "Uganda's Path to Land Tenure Security for All: Scaling-up Fit-for-Purpose Land Administration",
   },
   {
     name: "Dr. Upendo Chamuriho Matotola",
