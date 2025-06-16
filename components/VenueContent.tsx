@@ -73,8 +73,8 @@ export default function VenueContent() {
         {
           name: "Airport Taxi",
           description:
-            "Official airport taxis are available outside the arrivals terminal. The journey to Makerere University takes approximately 1 hour, depending on traffic.",
-          cost: "Approx. $30-40 USD",
+            "Official airport taxis are available outside the arrivals terminal. The journey to Kabira Country Club takes approximately 45 minutes, depending on traffic.",
+          cost: "Approx. $25-35 USD",
           tips: "Ensure you use official airport taxis with proper identification.",
         },
         {
@@ -134,19 +134,19 @@ export default function VenueContent() {
       {/* Hero Section with Featured Image */}
       <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mak-University-Main-Building.jpg-fJGMOqPDLQA7FLMGglKGNUX3e71DrR.jpeg"
-          alt="Makerere University Main Building"
+          src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqe2eil01zv0swHtiCEKe6vrX7D0djVgX74DbmxP3bQFCQ78Pw9tTVsacWwNOzkQSdAR-8pgFULzJNDXohW_DTYBY7ELEKiACCeGnX0pJDRWMq2VelPh0UoDjBdxHDLefW4SQ=s1360-w1360-h1020-rw"
+          alt="Kabira Country Club"
           fill
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">Makerere University</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">Kabira Country Club</h1>
           <p className="text-xl mb-4">Kampala, Uganda</p>
           <div className="flex flex-wrap gap-3">
             <Badge variant="outline" className="bg-white/20 text-white border-white/30">
               <Calendar className="h-4 w-4 mr-1" />
-              July 30 - August 1, 2025
+              July 31 - August 1, 2025
             </Badge>
             <Badge variant="outline" className="bg-white/20 text-white border-white/30">
               <Clock className="h-4 w-4 mr-1" />
@@ -173,9 +173,9 @@ export default function VenueContent() {
                 <div className="flex items-start gap-3">
                   <Building className="h-5 w-5 text-pigment_green shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-medium">Makerere University</p>
-                    <p className="text-muted-foreground">College of Engineering, Design, Art and Technology</p>
-                    <p className="text-muted-foreground">University Road, Kampala, Uganda</p>
+                    <p className="font-medium">Kabira Country Club</p>
+                    <p className="text-muted-foreground">Bukoto - Kisaasi Road</p>
+                    <p className="text-muted-foreground">Kampala, Uganda</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -197,13 +197,14 @@ export default function VenueContent() {
               <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100">
                 <h3 className="text-lg font-semibold mb-2 text-dark_green">About the Venue</h3>
                 <p className="text-sm mb-4">
-                  Makerere University is one of Africa's most prestigious universities, established in 1922. The
-                  conference will be held at the College of Engineering, Design, Art and Technology (CEDAT), which
-                  offers modern facilities including lecture theaters, seminar rooms, and exhibition spaces.
+                  Kabira Country Club is a premier venue located in the serene environment of Bukoto, offering excellent
+                  conference facilities with a blend of modern amenities and natural beauty. The club features
+                  well-equipped meeting rooms, beautiful gardens, recreational facilities, and professional services,
+                  making it an ideal location for international conferences and events.
                 </p>
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="https://cedat.mak.ac.ug/" target="_blank" className="flex items-center gap-2">
-                    Visit CEDAT Website <ExternalLink className="h-4 w-4" />
+                  <Link href="https://kabiracountryclub.com/" target="_blank" className="flex items-center gap-2">
+                    Visit Kabira Country Club Website <ExternalLink className="h-4 w-4" />
                   </Link>
                 </Button>
               </div>
@@ -212,14 +213,14 @@ export default function VenueContent() {
             {/* Google Maps Embed */}
             <div className="h-[400px] rounded-lg overflow-hidden border border-gray-200">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7412741259064!2d32.56560021475604!3d0.3302789997517936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb8080b33f1f%3A0x7cc225a89b3c4bc!2sMakerere%20University!5e0!3m2!1sen!2sus!4v1647886100000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7412741259064!2d32.6123456!3d0.3567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb8080b33f1f%3A0x7cc225a89b3c4bc!2sKabira%20Country%20Club!5e0!3m2!1sen!2sus!4v1647886100000!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Makerere University Map"
+                title="Kabira Country Club Map"
               ></iframe>
             </div>
           </div>

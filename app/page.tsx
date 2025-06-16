@@ -9,6 +9,8 @@ import { ProgramSchedule } from "@/components/ProgramSchedule"
 import Call4Abstracts from "@/components/Call4Abstracts"
 import VenueContent from "@/components/VenueContent"
 import CountdownTimer from "@/components/CountdownTimer"
+import WorkshopsContent from "@/components/WorkshopsContent"
+import PublicDialogueContent from "@/components/PublicDialogueContent"
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("overview")
@@ -17,10 +19,14 @@ export default function Home() {
     switch (activeTab) {
       case "overview":
         return <OverviewContent />
+      case "workshops":
+        return <WorkshopsContent />
       case "program":
         return <ProgramSchedule />
       case "call-for-abstracts":
         return <Call4Abstracts />
+      case "public-dialogue":
+        return <PublicDialogueContent />
       case "venue":
         return <VenueContent />
       default:

@@ -4,7 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import PreConferenceWorkshops from "./PreConferenceWorkshops"
+// Remove this import
+// import PreConferenceWorkshops from "./PreConferenceWorkshops"
 
 const transformedScheduleData = [
   {
@@ -294,11 +295,9 @@ export function ProgramSchedule() {
         </div>
       </CardHeader>
       <CardContent>
-        <Tabs defaultValue="workshops">
-          <TabsList className="mb-4 grid grid-cols-3 sm:flex sm:flex-wrap">
-            <TabsTrigger value="workshops" className="text-xs sm:text-sm">
-              Pre-Conference Workshops
-            </TabsTrigger>
+        <Tabs defaultValue="day2">
+          {/* Update the TabsList to only show main conference days */}
+          <TabsList className="mb-4 grid grid-cols-2 sm:flex sm:flex-wrap">
             <TabsTrigger value="day2" className="text-xs sm:text-sm">
               Day 1 (Jul 31)
             </TabsTrigger>
@@ -307,10 +306,12 @@ export function ProgramSchedule() {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="workshops">
+          {/* Remove the workshops TabsContent */}
+          {/* <TabsContent value="workshops">
             <PreConferenceWorkshops />
-          </TabsContent>
+          </TabsContent> */}
 
+          {/* Update the map to start from index 1 (skip workshops day) */}
           {transformedScheduleData.slice(1).map((day, dayIndex) => (
             <TabsContent key={dayIndex} value={`day${dayIndex + 2}`} className="space-y-4">
               {day.schedule.map((session, index) => (

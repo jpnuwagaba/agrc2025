@@ -218,12 +218,18 @@ export default function OverviewContent() {
     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SRB-Logo-kwlVnu6qVNRgiNhrEulqRvbB9oOu6W.png",
     // 3. Institution of Surveyors of Uganda
     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ISU-Logo-1-NUptP4w128c9mI6PvKR5ZFFsVldlSe.png",
+    // Netherlands
+    "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/RVO_Logo_online_ex_pos_en-Q56MCMOdBxffSXnos9sn7tTEl2RXCO.png",
     // 4. GIZ
     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4nqhh7Ql_400x400-removebg-preview-H0VWZOHJTMzt0KRvjDlnyuULccdoC7.png",
     // 5. UN Habitat
     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images-removebg-preview-3V82NUVy4A9vmGt41JkWqO0TF8D26G.png",
     // 6. GLTN
     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GLTN_LOGO_rgb_300dpi-removebg-preview-nHcSGSDLoyiEUOjA41eO1w96qLq24U.png",
+    // 7. EagleCORS
+    "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/Eaglecors_Logo_Finale-DsxBe1EKfT9cBylWE879Xgp0MYGmBS.png",
+    // 8. ST-I
+    "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/STI-LOGO-jiwZaFjPfANVcEYJWZQbTNeiBq51cK.png",
   ]
 
   // New Conference Organization section with faces
@@ -507,7 +513,7 @@ export default function OverviewContent() {
 
           <div className="flex flex-wrap justify-center items-center gap-8">
             {sponsorLogos.map((logo, index) => (
-              <div key={index} className="w-24 h-24 relative">
+              <div key={index} className="w-32 h-32 relative">
                 <Image
                   src={logo || "/placeholder.svg"}
                   alt="Sponsor logo"

@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { LayoutDashboard, Calendar, FileText, MapPin } from "lucide-react"
 
 interface SecondaryNavbarProps {
   activeTab: string
@@ -36,22 +35,26 @@ export default function SecondaryNavbar({ activeTab, setActiveTab }: SecondaryNa
   const navItems = [
     {
       id: "overview",
-      icon: <LayoutDashboard className="h-5 w-5" />,
       label: "Overview",
     },
     {
+      id: "workshops",
+      label: "Workshops",
+    },
+    {
+      id: "public-dialogue",
+      label: "Public Dialogue",
+    },
+    {
       id: "program",
-      icon: <Calendar className="h-5 w-5" />,
       label: "Program",
     },
     {
       id: "call-for-abstracts",
-      icon: <FileText className="h-5 w-5" />,
       label: "Call for Abstracts",
     },
     {
       id: "venue",
-      icon: <MapPin className="h-5 w-5" />,
       label: "Venue",
     },
   ]
@@ -62,7 +65,7 @@ export default function SecondaryNavbar({ activeTab, setActiveTab }: SecondaryNa
         className={`w-full transition-all duration-300 ${isSticky ? "fixed top-0 left-0 right-0 z-40 shadow-md" : ""}`}
         style={{ top: isSticky ? "0" : "auto" }}
       >
-        <div className="grid grid-cols-2 md:grid-cols-4 border-t border-b border-gray-400">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-t border-b border-gray-400">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -100,7 +103,6 @@ export default function SecondaryNavbar({ activeTab, setActiveTab }: SecondaryNa
                 navItems.indexOf(item) % 2 === 0 ? "border-r border-gray-200" : ""
               }`}
             >
-              <span className="block">{item.icon}</span>
               <span className="text-sm md:text-base">{item.label}</span>
             </button>
           ))}
