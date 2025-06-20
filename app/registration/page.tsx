@@ -291,7 +291,7 @@ export default function RegistrationPage() {
 
     // Basic validation
     if (!formData.firstName.trim() || !formData.lastName.trim() || !formData.email.trim() || !formData.ticketType) {
-      alert("Please fill in all required fields including your residence type")
+      alert("Please fill in all required fields")
       return
     }
 
@@ -319,7 +319,7 @@ export default function RegistrationPage() {
         // Prepare the registrant data
         const registrationData = {
           registration_date: new Date().toISOString(),
-          ticket_type: formData.ticketType, // Keep the same field name for database compatibility
+          ticket_type: formData.ticketType,
           prefix: formData.prefix,
           first_name: formData.firstName,
           last_name: formData.lastName,
@@ -399,7 +399,7 @@ export default function RegistrationPage() {
         console.log("Registration data:", {
           name: `${formData.prefix} ${formData.firstName} ${formData.lastName}`,
           email: formData.email,
-          residenceType: formData.ticketType, // Updated terminology in logs
+          ticketType: formData.ticketType,
         })
 
         // Show success message in mock mode
@@ -432,23 +432,6 @@ export default function RegistrationPage() {
 
   // Success message after submission
   if (isSubmitted) {
-    // Calculate the fee based on residence type
-    const getFeeInfo = () => {
-      if (formData.ticketType === "East African") {
-        return {
-          amount: "UGX 350,000",
-          category: "East African Resident",
-        }
-      } else {
-        return {
-          amount: "USD 120",
-          category: "International Participant",
-        }
-      }
-    }
-
-    const feeInfo = getFeeInfo()
-
     return (
       <div className="container mx-auto px-4 py-12 text-center">
         <div className="mb-8">
@@ -472,18 +455,10 @@ export default function RegistrationPage() {
           <h2 className="text-3xl font-bold text-pigment_green mb-4">Registration Complete!</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Thank you for registering for the AGRC2025 EALAN Conference. Your registration has been submitted
-            successfully as an <strong>{feeInfo.category}</strong>.
+            successfully.
           </p>
-
-          {/* Fee Information Card */}
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 max-w-md mx-auto mt-6 mb-4">
-            <h3 className="text-lg font-semibold text-dark_green mb-2">Registration Fee</h3>
-            <p className="text-2xl font-bold text-pigment_green mb-2">{feeInfo.amount}</p>
-            <p className="text-sm text-gray-600">Based on your residence type: {feeInfo.category}</p>
-          </div>
-
-          <p className="text-md text-gray-600 max-w-2xl mx-auto">
-            A confirmation email with detailed payment instructions has been sent to your email address.
+          <p className="text-md text-gray-600 max-w-2xl mx-auto mt-4">
+            A confirmation email with payment instructions has been sent to your email address.
           </p>
         </div>
 
@@ -510,10 +485,8 @@ export default function RegistrationPage() {
       <form onSubmit={handleSubmit}>
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle>Residence Type</CardTitle>
-            <CardDescription>
-              Please select your residence category to determine the appropriate registration fee
-            </CardDescription>
+            <CardTitle>Select Ticket Type</CardTitle>
+            <CardDescription>Choose the appropriate ticket type based on your location</CardDescription>
           </CardHeader>
           <CardContent>
             <RadioGroup
@@ -523,59 +496,33 @@ export default function RegistrationPage() {
             >
               <div
                 className={cn(
-                  "border-2 rounded-lg p-6 cursor-pointer transition-all duration-200",
+                  "border rounded-lg p-6 cursor-pointer",
                   formData.ticketType === "East African"
-                    ? "border-pigment_green bg-pigment_green/10 shadow-md ring-2 ring-pigment_green/20"
-                    : "border-gray-200 hover:border-pigment_green/50 hover:bg-gray-50",
+                    ? "border-pigment_green bg-pigment_green/5"
+                    : "hover:border-pigment_green",
                 )}
               >
                 <RadioGroupItem value="East African" id="east-african" className="sr-only" />
                 <Label htmlFor="east-african" className="flex flex-col cursor-pointer">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-bold text-lg">East African Resident</span>
-                    {formData.ticketType === "East African" && (
-                      <div className="w-6 h-6 rounded-full bg-pigment_green flex items-center justify-center">
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                  <span className="text-sm text-gray-600 mb-3">
-                    For residents of East African countries (Uganda, Kenya, Tanzania, Rwanda, Burundi, South Sudan)
-                  </span>
+                  <span className="font-bold text-lg mb-1">East African</span>
+                  <span className="text-sm text-gray-600 mb-2">For residents of East African countries</span>
+                  <span className="text-lg font-semibold text-pigment_green">UGX 350,000</span>
                 </Label>
               </div>
 
               <div
                 className={cn(
-                  "border-2 rounded-lg p-6 cursor-pointer transition-all duration-200",
+                  "border rounded-lg p-6 cursor-pointer",
                   formData.ticketType === "Non-East African"
-                    ? "border-pigment_green bg-pigment_green/10 shadow-md ring-2 ring-pigment_green/20"
-                    : "border-gray-200 hover:border-pigment_green/50 hover:bg-gray-50",
+                    ? "border-pigment_green bg-pigment_green/5"
+                    : "hover:border-pigment_green",
                 )}
               >
                 <RadioGroupItem value="Non-East African" id="non-east-african" className="sr-only" />
                 <Label htmlFor="non-east-african" className="flex flex-col cursor-pointer">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-bold text-lg">International Participant</span>
-                    {formData.ticketType === "Non-East African" && (
-                      <div className="w-6 h-6 rounded-full bg-pigment_green flex items-center justify-center">
-                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                  <span className="text-sm text-gray-600 mb-3">For participants from outside East Africa</span>
+                  <span className="font-bold text-lg mb-1">Non-East African</span>
+                  <span className="text-sm text-gray-600 mb-2">For international participants</span>
+                  <span className="text-lg font-semibold text-dark_green">USD 120</span>
                 </Label>
               </div>
             </RadioGroup>
@@ -588,7 +535,7 @@ export default function RegistrationPage() {
             <CardDescription>Please provide your personal details</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <Label htmlFor="prefix">Prefix</Label>
                 <Select value={formData.prefix} onValueChange={(value) => handleSelectChange("prefix", value)}>
@@ -625,7 +572,7 @@ export default function RegistrationPage() {
               </div>
             </div>
 
-            <div className="grid gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="email" className="after:content-['*'] after:ml-0.5 after:text-red-500">
                   Email Address
