@@ -4,32 +4,33 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, MapPin, Users } from "lucide-react"
+import Link from "next/link"
 
 export default function PublicDialogueContent() {
   const panelists = [
     {
-      name: "Hon. Judith Nalule Nabakooba",
-      title: "Minister of Lands, Housing and Urban Development",
-      country: "Uganda",
-      role: "Keynote Speaker",
+      name: "Dr. Ivan Bamweyana",
+      title: "Lecturer & Researcher, Makerere University",
+      image:
+        "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/bamweyana-LPghpDPmGzteQj1Mp6Ms0m3Xf6fjQw.png",
     },
     {
-      name: "Dr. Agnes Nkundwe Mwasumbi",
-      title: "Senior Lecturer & EALAN Coordinator",
-      country: "Tanzania",
-      role: "Panelist",
+      name: "Ms. Martha Mugarura",
+      title: "Assistant Commissioner, Urban Development – MLHUD",
+      image:
+        "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/martha-AvWcyyb5BuVYx3raFUs94UlcG8MfiW.jpg",
     },
     {
-      name: "Prof. John Bosco Kyalo Kiema",
-      title: "Department of Geospatial & Space Technology",
-      country: "Kenya",
-      role: "Panelist",
+      name: "Mugisha Turyahikayo Allan",
+      title: "Managing Partner, S-M Cathan Property Consult Ltd",
+      image:
+        "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/mugisha-BBMWdveRwrLMEwW2ayQVIB5fovKfyY.jpg",
     },
     {
-      name: "Dr. Upendo Chamuriho Matotola",
-      title: "Director of Real Estate",
-      country: "Tanzania",
-      role: "Panelist",
+      name: "Dr. Agnes Mwasumbi",
+      title: "Lecturer, Ardhi University",
+      image:
+        "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/mwasumbi-2yEdTk15p8WCsxc0IvA4RTPWWQAkxK.png",
     },
   ]
 
@@ -83,7 +84,7 @@ export default function PublicDialogueContent() {
         </div>
 
         {/* Overview Section */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div>
           <div>
             <h2 className="text-2xl font-bold text-dark_green mb-4">About the Dialogue</h2>
             <p className="text-gray-700 mb-4">
@@ -108,20 +109,6 @@ export default function PublicDialogueContent() {
               </ul>
             </div>
           </div>
-
-          <div>
-            <h2 className="text-2xl font-bold text-dark_green mb-4">Discussion Topics</h2>
-            <div className="space-y-3">
-              {keyTopics.map((topic, index) => (
-                <div key={index} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-                  <div className="w-6 h-6 rounded-full bg-pigment_green text-white flex items-center justify-center text-xs font-bold mt-0.5">
-                    {index + 1}
-                  </div>
-                  <span className="text-gray-700">{topic}</span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Panelists Section */}
@@ -136,68 +123,17 @@ export default function PublicDialogueContent() {
           <CardContent>
             <div className="grid md:grid-cols-2 gap-6">
               {panelists.map((panelist, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="font-bold text-dark_green">{panelist.name}</h3>
-                    <Badge
-                      className={
-                        panelist.role === "Keynote Speaker" ? "bg-chili_red text-white" : "bg-pigment_green text-white"
-                      }
-                    >
-                      {panelist.role}
-                    </Badge>
+                <div key={index} className="text-center">
+                  <div className="aspect-square w-full max-w-48 mx-auto mb-4 overflow-hidden rounded-lg">
+                    <img
+                      src={panelist.image || "/placeholder.svg"}
+                      alt={panelist.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
+                  <h3 className="font-bold text-dark_green text-lg mb-2">{panelist.name}</h3>
                   <p className="text-gray-700 text-sm mb-1">{panelist.title}</p>
                   <p className="text-gray-600 text-sm">{panelist.country}</p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Schedule Section */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Clock className="h-5 w-5 text-pigment_green" />
-              Dialogue Schedule
-            </CardTitle>
-            <CardDescription>July 30, 2025 | 14:00 - 17:00 Hrs</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {[
-                { time: "14:00 - 14:15", activity: "Welcome and Opening Remarks", speaker: "Conference Chair" },
-                {
-                  time: "14:15 - 14:45",
-                  activity: "Keynote Address: Land Policy Implementation Challenges",
-                  speaker: "Distinguished Speaker",
-                },
-                {
-                  time: "14:45 - 15:30",
-                  activity: "Panel Discussion: Regional Perspectives on Land Policy Gaps",
-                  speaker: "Eastern Africa Experts",
-                },
-                { time: "15:30 - 15:45", activity: "Tea Break", speaker: "" },
-                {
-                  time: "15:45 - 16:30",
-                  activity: "Open Floor Discussion: Community and Stakeholder Input",
-                  speaker: "Moderated Q&A",
-                },
-                { time: "16:30 - 16:50", activity: "Synthesis and Recommendations", speaker: "Panel Moderator" },
-                { time: "16:50 - 17:00", activity: "Closing Remarks", speaker: "EALAN Chair" },
-              ].map((session, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col md:flex-row md:items-center gap-4 p-4 border border-gray-100 rounded-lg"
-                >
-                  <Badge variant="outline" className="font-mono text-sm w-fit">
-                    {session.time}
-                  </Badge>
-                  <div className="flex-grow">
-                    <h4 className="font-semibold text-dark_green">{session.activity}</h4>
-                    {session.speaker && <p className="text-sm text-gray-600">{session.speaker}</p>}
-                  </div>
                 </div>
               ))}
             </div>
@@ -214,7 +150,7 @@ export default function PublicDialogueContent() {
             dialogue and contribute to meaningful policy discussions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-pigment_green hover:bg-pigment_green/90 text-white">Register Now</Button>
+            <Link href='/registration'><Button className="bg-pigment_green hover:bg-pigment_green/90 text-white">Register Now</Button></Link>
             <Button
               variant="outline"
               className="border-dark_green text-dark_green hover:bg-dark_green hover:text-white"
