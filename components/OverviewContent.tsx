@@ -210,26 +210,33 @@ export default function OverviewContent() {
     </section>
   )
 
-  // Sponsor logos in the specified order
+  // Sponsor logos in the specified order: EU, BMZ, GIZ, RVO, UN-Habitat, GLTN, ST-I, EAGLECORs, SURVNET, then the rest
   const sponsorLogos = [
-    // 1. Makerere University
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-6e3QXzMXNbuD3sISdjiAkYZb92KrMt.png",
-    // 2. Surveyors Registration Board
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SRB-Logo-kwlVnu6qVNRgiNhrEulqRvbB9oOu6W.png",
-    // 3. Institution of Surveyors of Uganda
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ISU-Logo-1-NUptP4w128c9mI6PvKR5ZFFsVldlSe.png",
-    // Netherlands
+    // EU
+    "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/EU_Co-funded-removebg-preview-YTNSNnFqcrU7QdAph4KrmOh6cptSvx.png",
+    // BMZ
+    "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/BMZ-removebg-preview-8FTovf5PTw40sb31R4EPLf7XXkaWgX.png",
+    // GIZ
+    "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/GIZ_logo-removebg-preview-cGySFaImkyXYeQqkdqW2cJ8hvep7kA.png",
+    // RVO (Netherlands)
     "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/RVO_Logo_online_ex_pos_en-Q56MCMOdBxffSXnos9sn7tTEl2RXCO.png",
-    // 4. GIZ
-    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4nqhh7Ql_400x400-removebg-preview-H0VWZOHJTMzt0KRvjDlnyuULccdoC7.png",
-    // 5. UN Habitat
+    // UN Habitat
     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images-removebg-preview-3V82NUVy4A9vmGt41JkWqO0TF8D26G.png",
-    // 6. GLTN
+    // GLTN
     "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GLTN_LOGO_rgb_300dpi-removebg-preview-nHcSGSDLoyiEUOjA41eO1w96qLq24U.png",
-    // 7. EagleCORS
-    "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/Eaglecors_Logo_Finale-DsxBe1EKfT9cBylWE879Xgp0MYGmBS.png",
-    // 8. ST-I
+    // ST-I
     "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/STI-LOGO-jiwZaFjPfANVcEYJWZQbTNeiBq51cK.png",
+    // EagleCORS
+    "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/Eaglecors_Logo_Finale-DsxBe1EKfT9cBylWE879Xgp0MYGmBS.png",
+    // SURVNET
+    "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/cropped-SURVNET-LOGO-zgTZ25naiE01TVRfkiJs2aPoex94hW.webp",
+    // Rest of the sponsors
+    // Makerere University
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-6e3QXzMXNbuD3sISdjiAkYZb92KrMt.png",
+    // Surveyors Registration Board
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SRB-Logo-kwlVnu6qVNRgiNhrEulqRvbB9oOu6W.png",
+    // Institution of Surveyors of Uganda
+    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ISU-Logo-1-NUptP4w128c9mI6PvKR5ZFFsVldlSe.png",
   ]
 
   // New Conference Organization section with faces

@@ -38,6 +38,14 @@ const speakers = [
       "https://res.cloudinary.com/dhshd7umk/image/upload/v1744981397/agrc2025ealan/7TH%20ADVANCES%20CONFERENCE%20PHOTOS/dube_sunync.jpg",
     topic: "Earth Observation Applications for Environmental Sustainability",
   },
+  {
+    name: "Prof. Jaap Zevenbergen",
+    title: "Professor of Land Administration Systems",
+    institution: "Faculty of Geo-Information Science and Earth Observation (ITC)",
+    university: "University of Twente",
+    image: "https://research.utwente.nl/files-asset/256587006/zevenbergen_2021.jpg?w=320&f=webp",
+    topic: "Innovations in Land Administration and Geospatial Technologies",
+  },
 ]
 
 export default function Speakers() {
