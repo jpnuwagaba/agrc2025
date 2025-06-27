@@ -225,16 +225,40 @@ export default function VenueContent() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-4 justify-center mt-6">
-            <Button className="bg-pigment_green hover:bg-pigment_green-600 text-white">
-              <Navigation className="mr-2 h-4 w-4" /> Get Directions
-            </Button>
-            <Button variant="outline">
-              <Info className="mr-2 h-4 w-4" /> Campus Map
-            </Button>
-          </div>
+          
         </CardContent>
       </Card>
+      <div className="p-6 border border-dashed border-dark_green/30 rounded-lg mt-8">
+            <h3 className="text-lg font-semibold mb-4 text-dark_green">Conference Special Rates</h3>
+            <p className="mb-4">
+              Selected accommodations offer special rates for AGRC2025 EALAN Conference attendees. Contact our
+              designated representatives below to secure your discounted booking:
+            </p>
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <div className="bg-white p-4 rounded-md border">
+                <h5 className="font-semibold text-dark_green">Kabira Country Club</h5>
+                <p className="text-sm">Elizabeth Kabira: +256 773 882551</p>
+              </div>
+              <div className="bg-white p-4 rounded-md border">
+                <h5 className="font-semibold text-dark_green">Fairway Hotel & Spa</h5>
+                <p className="text-sm">Allen Joan Kabyetsiza: +256 772 425 542</p>
+                <p className="text-sm">Email: allen@fairwayhotel.co.ug</p>
+              </div>
+            </div>
+            <div className="bg-pigment_green/5 p-4 rounded-md border border-pigment_green/20 hidden">
+              <h4 className="font-semibold text-dark_green mb-2">Need Assistance with Accommodation?</h4>
+              <p className="text-sm mb-3">
+                Our conference team can help you find and book suitable accommodation based on your preferences and
+                budget.
+              </p>
+              <Button variant="outline" asChild>
+                <Link href="mailto:accommodation@agrc2025ealan.org" className="flex items-center gap-2">
+                  <Mail className="h-4 w-4" />
+                  accommodation@agrc2025ealan.org
+                </Link>
+              </Button>
+            </div>
+          </div>
 
       {/* Transportation Section */}
       <Card>
@@ -338,6 +362,28 @@ export default function VenueContent() {
                       </Badge>
                     ))}
                   </div>
+                  {accommodation.name === "Makerere University Guest House" && (
+                    <div className="bg-pigment_green/5 p-3 rounded-md border border-pigment_green/20 mt-4">
+                      <p className="text-sm font-medium text-pigment_green mb-2">Conference Discount Contact:</p>
+                      <p className="text-sm">
+                        <strong>Elizabeth Kabira</strong>
+                      </p>
+                      <p className="text-sm">Phone: +256 773 882551</p>
+                      <p className="text-xs text-gray-600">Mention AGRC2025 for discounted rates</p>
+                    </div>
+                  )}
+                  {accommodation.name === "Fairway Hotel & Spa" && (
+                    <div className="bg-pigment_green/5 p-3 rounded-md border border-pigment_green/20 mt-4">
+                      <p className="text-sm font-medium text-pigment_green mb-2">Conference Discount Contact:</p>
+                      <p className="text-sm">
+                        <strong>Allen Joan Kabyetsiza</strong>
+                      </p>
+                      <p className="text-sm">Business Development Manager</p>
+                      <p className="text-sm">Phone: +256 772 425 542, +256 414 259571/4</p>
+                      <p className="text-sm">Email: allen@fairwayhotel.co.ug</p>
+                      <p className="text-xs text-gray-600">Mention AGRC2025 for discounted rates</p>
+                    </div>
+                  )}
                 </CardContent>
                 <CardFooter>
                   <Button asChild className="w-full bg-dark_green hover:bg-dark_green/90 text-white">
@@ -350,26 +396,7 @@ export default function VenueContent() {
             ))}
           </div>
 
-          <div className="p-6 border border-dashed border-dark_green/30 rounded-lg mt-8">
-            <h3 className="text-lg font-semibold mb-4 text-dark_green">Conference Special Rates</h3>
-            <p className="mb-4">
-              All listed accommodations offer special rates for AGRC2025 EALAN Conference attendees. Use the code{" "}
-              <span className="font-bold">AGRC2025</span> when booking to receive the discounted rate.
-            </p>
-            <div className="bg-pigment_green/5 p-4 rounded-md border border-pigment_green/20">
-              <h4 className="font-semibold text-dark_green mb-2">Need Assistance with Accommodation?</h4>
-              <p className="text-sm mb-3">
-                Our conference team can help you find and book suitable accommodation based on your preferences and
-                budget.
-              </p>
-              <Button variant="outline" asChild>
-                <Link href="mailto:accommodation@agrc2025ealan.org" className="flex items-center gap-2">
-                  <Mail className="h-4 w-4" />
-                  accommodation@agrc2025ealan.org
-                </Link>
-              </Button>
-            </div>
-          </div>
+          
         </CardContent>
       </Card>
 

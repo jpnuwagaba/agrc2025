@@ -21,6 +21,11 @@ export default function PublicDialogueContent() {
         "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/martha-AvWcyyb5BuVYx3raFUs94UlcG8MfiW.jpg",
     },
     {
+      name: "Joanita Babirye",
+      title: "Co-founder, Girls For Climate Action & UN Women Youth Action Coalition Leader",
+      image: "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/Joanita-photo-IwBLJFZZ5Y56cPFi4IREmQ7sNUzF9l.jpg",
+    },
+    {
       name: "Mugisha Turyahikayo Allan",
       title: "Managing Partner, S-M Cathan Property Consult Ltd",
       image:
@@ -150,10 +155,12 @@ export default function PublicDialogueContent() {
             dialogue and contribute to meaningful policy discussions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href='/registration'><Button className="bg-pigment_green hover:bg-pigment_green/90 text-white">Register Now</Button></Link>
+            <Link href="/registration">
+              <Button className="bg-pigment_green hover:bg-pigment_green/90 text-white">Register Now</Button>
+            </Link>
             <Button
               variant="outline"
-              className="border-dark_green text-dark_green hover:bg-dark_green hover:text-white"
+              className="border-dark_green text-dark_green hover:bg-dark_green hover:text-white bg-transparent"
             >
               Download Program
             </Button>
