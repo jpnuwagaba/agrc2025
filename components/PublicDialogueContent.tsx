@@ -21,7 +21,7 @@ export default function PublicDialogueContent() {
       role: "panelist",
     },
     {
-      name: "Joanita Babirye",
+      name: "Ms. Joanita Babirye",
       title: "Co-founder, Girls For Climate Action & UN Women Youth Action Coalition Leader",
       image:
         "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/Joanita-photo-IwBLJFZZ5Y56cPFi4IREmQ7sNUzF9l.jpg",
@@ -35,7 +35,7 @@ export default function PublicDialogueContent() {
       role: "panelist",
     },
     {
-      name: "Mugisha Turyahikayo Allan",
+      name: "Mr. Allan Mugisha Turyahikayo",
       title: "Managing Partner, S-M Cathan Property Consult Ltd",
       image:
         "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/mugisha-BBMWdveRwrLMEwW2ayQVIB5fovKfyY.jpg",
@@ -157,13 +157,13 @@ export default function PublicDialogueContent() {
                   </div>
                   <div className="p-6">
                     <h3
-                      className={`font-bold text-lg mb-2 leading-tight ${
+                      className={`font-bold mb-2 leading-tight text-base ${
                         panelist.role === "moderator" ? "text-chili_red" : "text-dark_green"
                       }`}
                     >
                       {panelist.name}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{panelist.title}</p>
+                    <p className="text-gray-600 leading-relaxed text-xs">{panelist.title}</p>
                     {panelist.role === "moderator" && (
                       <div className="mt-2">
                         <Badge variant="outline" className="text-xs border-chili_red text-chili_red">
