@@ -134,11 +134,11 @@ export default function HowToPayPage() {
                 <div className="space-y-4">
                   <div>
                     <label className="text-sm font-medium text-gray-500">MTN Mobile Money</label>
-                    <p className="text-lg font-semibold font-mono">+256 706 712830</p>
+                    <p className="text-lg font-semibold font-mono">+256 775 702 841</p>
                   </div>
                   <div>
                     <label className="text-sm font-medium text-gray-500">Airtel Money</label>
-                    <p className="text-lg font-semibold font-mono">+256 775 702 841</p>
+                    <p className="text-lg font-semibold font-mono">+256 706 712830</p>
                   </div>
                   <div>
                     <label className="text-sm font-medium text-gray-500">Registered to</label>
@@ -213,7 +213,7 @@ export default function HowToPayPage() {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-pigment_green text-pigment_green hover:bg-pigment_green hover:text-white"
+                  className="border-pigment_green text-pigment_green hover:bg-pigment_green hover:text-white bg-transparent"
                 >
                   <Link href="/registration">
                     <CreditCard className="h-4 w-4 mr-2" />
