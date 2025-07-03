@@ -231,6 +231,71 @@ const workshopsData: Workshop[] = [
     },
     venue: "To be announced",
   },
+  {
+    id: "uav",
+    title: "UAV Applications in Land Administration and Sustainable Development",
+    description: [
+      "Join UAV experts and professionals for hands-on training in drone operations, aerial mapping, and photogrammetry, with real-world applications in land governance and sustainable development.",
+      "This comprehensive workshop will provide participants with practical skills in UAV technology applications for land administration, covering everything from flight operations to data processing and analysis. The workshop emphasizes real-world applications that support sustainable development goals and effective land governance.",
+      "Participants will engage in field demonstrations, hands-on training sessions, and learn about the latest innovations in UAV technology for geospatial applications. The workshop also covers important aspects of policy, regulation, and ethical considerations in drone use for land administration purposes.",
+    ],
+    objectives: [
+      "To provide hands-on training in drone flight operations and planning",
+      "To demonstrate aerial data capture techniques and GNSS integration",
+      "To teach photogrammetry and 3D modeling using UAV data",
+      "To explore UAV applications in land, agriculture, and infrastructure",
+      "To discuss policy, regulation, and ethical considerations in drone use",
+      "To promote community-driven geospatial innovation using UAV technology",
+    ],
+    outcomes: [
+      "Practical skills in UAV flight operations and mission planning",
+      "Understanding of aerial data capture and processing techniques",
+      "Knowledge of photogrammetry and 3D modeling workflows",
+      "Awareness of regulatory and ethical frameworks for UAV operations",
+      "Experience with field demonstrations and data processing labs",
+      "Network of UAV professionals and practitioners in the region",
+    ],
+    participants: [
+      "UAV pilots and drone operators",
+      "App developers working with geospatial applications",
+      "Students in geomatics, surveying, and related fields",
+      "Government officers involved in land administration",
+      "Researchers in geospatial technologies and remote sensing",
+      "Policymakers working on drone regulations and land governance",
+      "Community stakeholders interested in geospatial innovation",
+    ],
+    days: [
+      {
+        date: "July 25, 2025",
+        sessions: [
+          { time: "8:00 AM", activity: "Workshop registration and introduction", facilitator: "Dr. Dianah Rose Abeho" },
+          { time: "TBD", activity: "Detailed schedule to be announced", facilitator: "TBD" },
+        ],
+      },
+      {
+        date: "July 26, 2025",
+        sessions: [
+          { time: "8:00 AM", activity: "Hands-on UAV operations training", facilitator: "TBD" },
+          { time: "TBD", activity: "Detailed schedule to be announced", facilitator: "TBD" },
+        ],
+      },
+      {
+        date: "July 27, 2025",
+        sessions: [
+          { time: "8:00 AM", activity: "Field demonstrations and data processing", facilitator: "TBD" },
+          { time: "TBD", activity: "Detailed schedule to be announced", facilitator: "TBD" },
+        ],
+      },
+    ],
+    contactPerson: {
+      name: "Dr. Dianah Rose Abeho",
+      title: "Workshop Coordinator",
+      organization: "Makerere University",
+      phone: "+256 776 139601",
+    },
+    venue: "To be announced",
+    registrationLink: "#",
+  },
   // Additional workshops can be added here in the future
 ]
 
@@ -265,15 +330,45 @@ export function PreConferenceWorkshops() {
                 <CardContent className="pt-4">
                   <p className="text-gray-700 line-clamp-3 mb-4">{workshop.description[0]}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <Badge variant="outline" className="bg-gray-50">
-                      Land Administration
-                    </Badge>
-                    <Badge variant="outline" className="bg-gray-50">
-                      Stakeholder Workshop
-                    </Badge>
-                    <Badge variant="outline" className="bg-gray-50">
-                      FFPLA
-                    </Badge>
+                    {workshop.id === "ffpla" && (
+                      <>
+                        <Badge variant="outline" className="bg-gray-50">
+                          Land Administration
+                        </Badge>
+                        <Badge variant="outline" className="bg-gray-50">
+                          Stakeholder Workshop
+                        </Badge>
+                        <Badge variant="outline" className="bg-gray-50">
+                          FFPLA
+                        </Badge>
+                      </>
+                    )}
+                    {workshop.id === "gnss" && (
+                      <>
+                        <Badge variant="outline" className="bg-gray-50">
+                          GNSS
+                        </Badge>
+                        <Badge variant="outline" className="bg-gray-50">
+                          Positioning
+                        </Badge>
+                        <Badge variant="outline" className="bg-gray-50">
+                          Surveying
+                        </Badge>
+                      </>
+                    )}
+                    {workshop.id === "uav" && (
+                      <>
+                        <Badge variant="outline" className="bg-gray-50">
+                          UAV/Drones
+                        </Badge>
+                        <Badge variant="outline" className="bg-gray-50">
+                          Aerial Mapping
+                        </Badge>
+                        <Badge variant="outline" className="bg-gray-50">
+                          Photogrammetry
+                        </Badge>
+                      </>
+                    )}
                   </div>
                   <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-100">
                     <div className="flex items-center gap-2">
@@ -296,7 +391,7 @@ export function PreConferenceWorkshops() {
                     </div>
                     <Button
                       variant="outline"
-                      className="border-pigment_green text-pigment_green hover:bg-pigment_green hover:text-white"
+                      className="border-pigment_green text-pigment_green hover:bg-pigment_green hover:text-white bg-transparent"
                       onClick={() => setSelectedWorkshop(workshop.id)}
                     >
                       View Details
@@ -305,27 +400,6 @@ export function PreConferenceWorkshops() {
                 </CardContent>
               </Card>
             ))}
-
-            {/* Placeholder for future workshops */}
-            <Card className="overflow-hidden border-dashed border-2 border-gray-300 bg-gray-50 flex flex-col items-center justify-center p-8 text-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-gray-400 mb-4"
-              >
-                <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
-                <circle cx="12" cy="13" r="3" />
-              </svg>
-              <h3 className="text-lg font-medium text-gray-600 mb-2">2 More Workshops Coming Soon</h3>
-              <p className="text-gray-500 text-sm">Additional pre-conference workshops will be announced shortly.</p>
-            </Card>
           </div>
         </>
       ) : (

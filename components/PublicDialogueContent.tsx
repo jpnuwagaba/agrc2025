@@ -1,9 +1,7 @@
 "use client"
-
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Calendar, Clock, MapPin, Users } from "lucide-react"
+import { Calendar, Clock, MapPin, Users, Mic } from "lucide-react"
 import Link from "next/link"
 
 export default function PublicDialogueContent() {
@@ -13,29 +11,35 @@ export default function PublicDialogueContent() {
       title: "Lecturer & Researcher, Makerere University",
       image:
         "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/bamweyana-LPghpDPmGzteQj1Mp6Ms0m3Xf6fjQw.png",
+      role: "panelist",
     },
     {
       name: "Ms. Martha Mugarura",
       title: "Assistant Commissioner, Urban Development – MLHUD",
       image:
         "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/martha-AvWcyyb5BuVYx3raFUs94UlcG8MfiW.jpg",
+      role: "panelist",
     },
     {
       name: "Joanita Babirye",
       title: "Co-founder, Girls For Climate Action & UN Women Youth Action Coalition Leader",
-      image: "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/Joanita-photo-IwBLJFZZ5Y56cPFi4IREmQ7sNUzF9l.jpg",
-    },
-    {
-      name: "Mugisha Turyahikayo Allan",
-      title: "Managing Partner, S-M Cathan Property Consult Ltd",
       image:
-        "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/mugisha-BBMWdveRwrLMEwW2ayQVIB5fovKfyY.jpg",
+        "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/Joanita-photo-IwBLJFZZ5Y56cPFi4IREmQ7sNUzF9l.jpg",
+      role: "panelist",
     },
     {
       name: "Dr. Agnes Mwasumbi",
       title: "Lecturer, Ardhi University",
       image:
         "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/mwasumbi-2yEdTk15p8WCsxc0IvA4RTPWWQAkxK.png",
+      role: "panelist",
+    },
+    {
+      name: "Mugisha Turyahikayo Allan",
+      title: "Managing Partner, S-M Cathan Property Consult Ltd",
+      image:
+        "https://fstj3yewzk8k0t1q.public.blob.vercel-storage.com/dialogue_panelists/mugisha-BBMWdveRwrLMEwW2ayQVIB5fovKfyY.jpg",
+      role: "moderator",
     },
   ]
 
@@ -117,33 +121,62 @@ export default function PublicDialogueContent() {
         </div>
 
         {/* Panelists Section */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+        <div className="">
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-dark_green mb-2 flex items-center gap-2">
               <Users className="h-5 w-5 text-pigment_green" />
-              Distinguished Panelists
-            </CardTitle>
-            <CardDescription>Leading experts and policymakers from across Eastern Africa</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 gap-6">
+              Distinguished Panelists & Moderator
+            </h2>
+            <p className="text-gray-600">Leading experts and policymakers from across Eastern Africa</p>
+          </div>
+          <div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {panelists.map((panelist, index) => (
-                <div key={index} className="text-center">
-                  <div className="aspect-square w-full max-w-48 mx-auto mb-4 overflow-hidden rounded-lg">
+                <div
+                  key={index}
+                  className={`bg-white rounded-lg overflow-hidden border ${
+                    panelist.role === "moderator"
+                      ? "border-chili_red shadow-lg ring-2 ring-chili_red/20"
+                      : "border-gray-200"
+                  }`}
+                >
+                  <div className="aspect-[4/3] relative overflow-hidden">
                     <img
                       src={panelist.image || "/placeholder.svg"}
                       alt={panelist.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover shadow-none"
                     />
+                    {panelist.role === "moderator" && (
+                      <div className="absolute top-2 right-2">
+                        <Badge className="bg-chili_red text-white border-0 text-xs">
+                          <Mic className="h-3 w-3 mr-1" />
+                          Moderator
+                        </Badge>
+                      </div>
+                    )}
                   </div>
-                  <h3 className="font-bold text-dark_green text-lg mb-2">{panelist.name}</h3>
-                  <p className="text-gray-700 text-sm mb-1">{panelist.title}</p>
-                  <p className="text-gray-600 text-sm">{panelist.country}</p>
+                  <div className="p-6">
+                    <h3
+                      className={`font-bold text-lg mb-2 leading-tight ${
+                        panelist.role === "moderator" ? "text-chili_red" : "text-dark_green"
+                      }`}
+                    >
+                      {panelist.name}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{panelist.title}</p>
+                    {panelist.role === "moderator" && (
+                      <div className="mt-2">
+                        <Badge variant="outline" className="text-xs border-chili_red text-chili_red">
+                          Panel Moderator
+                        </Badge>
+                      </div>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Registration and Contact */}
 
@@ -154,16 +187,10 @@ export default function PublicDialogueContent() {
             Your voice matters in shaping the future of land governance in Eastern Africa. Participate in this important
             dialogue and contribute to meaningful policy discussions.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Link href="/registration">
               <Button className="bg-pigment_green hover:bg-pigment_green/90 text-white">Register Now</Button>
             </Link>
-            <Button
-              variant="outline"
-              className="border-dark_green text-dark_green hover:bg-dark_green hover:text-white bg-transparent"
-            >
-              Download Program
-            </Button>
           </div>
         </div>
       </div>

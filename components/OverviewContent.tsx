@@ -13,13 +13,21 @@ export default function OverviewContent() {
 
   // Update the committeeMembers object with the provided images
   const committeeMembers = {
-    chair: {
-      name: "Dr. Lydia Mazzi Kayondo-Ndandiko",
-      role: "Conference Chairperson",
-      photo:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-03-28%20at%2021.04.20-ZUo3tGSZE2kXySyNxCIy65IsJlg9pM.jpeg",
-      institution: "Makerere University",
-    },
+    chairs: [
+      {
+        name: "Dr. Lydia Mazzi Kayondo-Ndandiko",
+        role: "Conference Chairperson",
+        photo:
+          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-03-28%20at%2021.04.20-ZUo3tGSZE2kXySyNxCIy65IsJlg9pM.jpeg",
+        institution: "Makerere University",
+      },
+      {
+        name: "Dr. Ronald Ssengendo",
+        role: "Conference Co-Chairperson",
+        photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8pFhLrIwEYcy8oWwT9j2cdyaJ7JG4q.png",
+        institution: "Makerere University",
+      },
+    ],
     advisoryBoard: [
       {
         name: "Prof. Moses Musinguzi",
@@ -63,12 +71,6 @@ export default function OverviewContent() {
         name: "Dr. Ivan Bamweyana",
         role: "Committee Member",
         photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-DdDIhGxZQLxheJ1Ry1KGPEYKonfKPf.png",
-        institution: "Makerere University",
-      },
-      {
-        name: "Dr. Ronald Ssengendo",
-        role: "Committee Member",
-        photo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-8pFhLrIwEYcy8oWwT9j2cdyaJ7JG4q.png",
         institution: "Makerere University",
       },
       {
@@ -256,20 +258,17 @@ export default function OverviewContent() {
           <h3 className="text-lg font-semibold mb-8 text-center text-dark_green border-b border-pigment_green/30 pb-2">
             Conference Chairing Committee
           </h3>
-          <div className="flex justify-center">
-            <div className="flex flex-col items-center max-w-xs">
-              <div className="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-pigment_green">
-                <Image
-                  src={committeeMembers.chair.photo || "/placeholder.svg"}
-                  alt={committeeMembers.chair.name}
-                  fill
-                  className="object-cover"
-                />
+          <div className="flex justify-center gap-8">
+            {committeeMembers.chairs.map((chair, index) => (
+              <div key={index} className="flex flex-col items-center max-w-xs">
+                <div className="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-pigment_green">
+                  <Image src={chair.photo || "/placeholder.svg"} alt={chair.name} fill className="object-cover" />
+                </div>
+                <h4 className="text-xl text-center font-bold text-pigment_green">{chair.name}</h4>
+                <p className="text-gray-600">{chair.role}</p>
+                <p className="text-sm text-gray-500">{chair.institution}</p>
               </div>
-              <h4 className="text-xl text-center font-bold text-pigment_green">{committeeMembers.chair.name}</h4>
-              <p className="text-gray-600">{committeeMembers.chair.role}</p>
-              <p className="text-sm text-gray-500">{committeeMembers.chair.institution}</p>
-            </div>
+            ))}
           </div>
         </div>
 
