@@ -44,7 +44,7 @@ const speakers = [
     institution: "Faculty of Geo-Information Science and Earth Observation (ITC)",
     university: "University of Twente",
     image: "https://research.utwente.nl/files-asset/256587006/zevenbergen_2021.jpg?w=320&f=webp",
-    topic: "Innovations in Land Administration and Geospatial Technologies",
+    topic: "Impactful Digital Land Administration needs to be Interoperable",
   },
 ]
 
